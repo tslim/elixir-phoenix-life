@@ -52,9 +52,9 @@ defmodule GameOfLifeTest do
     state = [[1,2], [2,2], [3,2]]
     board_size = [3,3]
 
-    assert GameOfLife.is_populated?([2,2], state, board_size) == true
-    assert GameOfLife.is_populated?([2,3], state, board_size) == true
-    assert GameOfLife.is_populated?([1,1], state, board_size) == false
+    assert GameOfLife.is_cell_populated?([2,2], state, board_size) == true
+    assert GameOfLife.is_cell_populated?([2,3], state, board_size) == true
+    assert GameOfLife.is_cell_populated?([1,1], state, board_size) == false
   end
 
   test "Calculate number of active neighbours for a cell" do

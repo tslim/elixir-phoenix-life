@@ -57,13 +57,13 @@ defmodule GameOfLife do
   """
   def apply_game_logic(affected_cells, state, board_size) do
     affected_cells
-    |> Enum.filter(fn (cell) -> is_populated?(cell, state, board_size) end)
+    |> Enum.filter(fn (cell) -> is_cell_populated?(cell, state, board_size) end)
   end
 
   @doc ~S"""
   Determines if a cell should be populated or not
   """
-  def is_populated?(cell, state, board_size) do
+  def is_cell_populated?(cell, state, board_size) do
     active_neighbours = number_of_active_neighbours(cell, state, board_size)
     cond do
       Enum.member?(state, cell) && active_neighbours in 2..3 ->
