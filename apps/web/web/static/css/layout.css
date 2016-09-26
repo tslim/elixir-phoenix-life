@@ -1,0 +1,63 @@
+body {
+  font-size: 16px;
+  font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+  font-weight: 400;
+  color: #222;
+}
+
+a {
+  color: #4e2a8e;
+}
+
+.elixir-purple {
+  color: #9768d1;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: block;
+  z-index: 100;
+  width: 100%;
+  height: 6rem;
+  background-color: #373f52;
+  color: #fff;
+  border-bottom: 1px solid #d5dae6;
+}
+
+.navbar h1.site-name {
+  font-size: 24px;
+  line-height: 6rem;
+}
+
+main {
+  margin-top: 8rem;
+}
+
+footer {
+  padding: 2em 0;
+  font-size: 12px;
+  color: #aaa;
+}
+
+.board-size-input {
+  width: 60px;
+}
+
+.game-board {
+  table-layout: fixed;
+  border-collapse; collapse;
+  border-spacing: 0;
+}
+
+.game-board tr {
+  height: 50px;
+}
+
+.game-board td {
+  padding: 0;
+  border: 1px solid black;
+  width: 50px;
+}

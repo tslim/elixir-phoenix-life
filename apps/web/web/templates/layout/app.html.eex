@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Game of Life in Elixir by T.S. Lim</title>
+    <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
+  </head>
+
+  <body>
+
+    <div class="container">
+      <navbar class="navbar">
+        <div class="container">
+          <h1 class="site-name">Game of Life in <span class="elixir-purple">Elixir</span></h1>
+        </div>
+      </navbar>
+
+      <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
+      <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
+
+      <main role="main">
+        <%= render @view_module, @view_template, assigns %>
+      </main>
+
+      <footer>Conway's Game of Life in <a href="http://elixir-lang.org/">Elixir</a> with a <a href="http://www.phoenixframework.org/">Phoenix</a> Web Interface by <a href="http://clipsoflogic.com">T.S. Lim</a>. Code on <a href="https://github.com/tslim/elixir-phoenix-life">GitHub</a>.</footer>
+    </div> <!-- /container -->
+
+    <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
+  </body>
+</html>

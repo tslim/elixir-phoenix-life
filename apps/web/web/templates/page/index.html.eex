@@ -1,0 +1,36 @@
+<div class="row">
+  <div class="eight columns">
+    <%= render_game_board(@cols, @rows) %>
+    <table class="game-board">
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+  </div>
+  <div class="four columns">
+    <div>
+      <label>Board Size</label>
+      <input class="board-size-input" type="number" placeholder="" id="cols" name="cols" value="<%= @cols %>">&nbsp;x&nbsp;
+      <input class="board-size-input" type="number" placeholder="" id="rows" name="rows" value="<%= @rows %>">
+      <a class="button" href="#">Set</a>
+    </div>
+    <div>
+      <label>Game Controls</label>
+      <a class="button button-primary" href="#">Start</a>
+      <a class="button" href="#">Reset</a>
+    </div>
+  </div>
+</div>
+
