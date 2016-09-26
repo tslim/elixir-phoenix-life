@@ -1,4 +1,4 @@
-defmodule GameOfLife.Mixfile do
+defmodule ElixirPhoenixLife.Mixfile do
   use Mix.Project
 
   def project do
