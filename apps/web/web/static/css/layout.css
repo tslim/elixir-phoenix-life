@@ -50,14 +50,19 @@ footer {
   table-layout: fixed;
   border-collapse; collapse;
   border-spacing: 0;
+  background-color: #d5dae6;
 }
 
 .game-board tr {
-  height: 50px;
+  height: 15px;
 }
 
 .game-board td {
   padding: 0;
-  border: 1px solid black;
-  width: 50px;
+  border: 1px solid white;
+  width: 15px;
+}
+
+.game-board td.active {
+  background-color: #9768d1;
 }

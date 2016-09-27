@@ -18,4 +18,10 @@ import "phoenix_html"
 // Local files can be imported directly using relative
 // paths "./socket" or full ones "web/static/js/socket".
 
-// import socket from "./socket"
+import socket from "./socket"
+import Game from "./game"
+
+$(() => {
+  var game = new Game()
+  game.init()
+})

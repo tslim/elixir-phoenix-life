@@ -1,0 +1,14 @@
+<table class="game-board" data-cols="<%= @cols %>" data-rows="<%= @rows %>">
+
+  <%= for y <- 1..@cols do %>
+    <tr>
+      <%= for x <- 1..@rows do %>
+        <td data-cell-id="<%= x %>-<%= y %>"></td>
+      <% end %>
+    </tr>
+  <% end %>
+</table>
+
+<a class="button button-primary" href="#" data-behavior="start-game">Start</a>
+<a class="button" href="#" data-behavior="reset-game">Reset</a>
+
