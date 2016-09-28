@@ -1,6 +1,10 @@
 defmodule GameOfLife.Web do
   use Application
 
+  @moduledoc '''
+  Web Interface for Game of Life
+  '''
+
   # See http://elixir-lang.org/docs/stable/elixir/Application.html
   # for more information on OTP Applications
   def start(_type, _args) do

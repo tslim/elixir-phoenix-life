@@ -1,7 +1,7 @@
 defmodule GameOfLife.Web.GameController do
   use GameOfLife.Web.Web, :controller
 
-  def index(conn, %{ "cols" => cols, "rows" => rows }) do
+  def index(conn, %{"cols" => cols, "rows" => rows}) do
     conn
     |> assign(:cols, cols)
     |> assign(:rows, rows)
@@ -9,7 +9,7 @@ defmodule GameOfLife.Web.GameController do
   end
 
   def index(conn, _params) do
-    index(conn, %{ "cols" => 30, "rows" => 30 })
+    index(conn, %{"cols" => 30, "rows" => 30})
   end
 
 end

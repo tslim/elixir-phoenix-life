@@ -42,6 +42,7 @@ defmodule GameOfLife.Web.Mixfile do
      {:gettext, "~> 0.11"},
      {:cowboy, "~> 1.0"},
      {:game_of_life, in_umbrella: true},
-     {:excoveralls, "~> 0.5", only: :test}]
+     {:excoveralls, "~> 0.5", only: :test},
+     {:credo, "~> 0.4", only: [:dev, :test]}]
   end
 end

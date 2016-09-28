@@ -1,4 +1,9 @@
 defmodule GameOfLife.Web.GameChannel do
+
+  @moduledoc '''
+  Web socket channel to handle game updates
+  '''
+
   use Phoenix.Channel
   require Logger
 
@@ -10,13 +15,13 @@ defmodule GameOfLife.Web.GameChannel do
     {:error, %{reason: "unauthorized"}}
   end
 
-  def handle_in("game_state", %{ "state" => state, "cols" => cols, "rows" => rows}, socket) do
+  def handle_in("game_state", %{"state" => state, "cols" => cols, "rows" => rows}, socket) do
     game_state =
       state
       |> convert_to_game_state_format
       |> GameOfLife.tick([cols,rows])
 
-    {:reply, {:ok, %{ state: game_state }}, socket}
+    {:reply, {:ok, %{state: game_state}}, socket}
   end
 
   def convert_to_game_state_format(state) do
