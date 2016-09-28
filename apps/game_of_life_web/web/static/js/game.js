@@ -13,12 +13,14 @@ class Game {
       .receive("ok", resp => { console.log("Joined successfully", resp) })
       .receive("error", resp => { console.log("Unable to join", resp) })
 
-    $("[data-behavior=start-game]").on('click', () => {
+    $("[data-behavior=start-game]").on('click', (e) => {
+      e.preventDefault()
       this.updateGameState("start")
       this.submitBoardState()
     })
 
-    $("[data-behavior=reset-game]").on('click', () => {
+    $("[data-behavior=reset-game]").on('click', (e) => {
+      e.preventDefault()
       this.updateGameState("reset")
     })
 
