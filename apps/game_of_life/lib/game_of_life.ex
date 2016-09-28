@@ -1,5 +1,5 @@
 defmodule GameOfLife do
-  @moduledoc ~S"""
+  @moduledoc """
   Handles the logic for Conway's Game of Life.
 
   Each cell is tracked as a list that represents its coordinate
@@ -13,7 +13,7 @@ defmodule GameOfLife do
   active cells.
   """
 
-  @doc ~S"""
+  @doc """
   Transform current board state to the next iteration.
   Returns a new list of active cells
   """
@@ -23,7 +23,7 @@ defmodule GameOfLife do
     |> apply_game_logic(state, board_size)
   end
 
-  @doc ~S"""
+  @doc """
   Returns a list of cells that will be affected in this iteration.
   This is basically the neighbours of all currently active cells.
   """
@@ -33,7 +33,7 @@ defmodule GameOfLife do
     |> Enum.uniq
   end
 
-  @doc ~S"""
+  @doc """
   Returns a list of neighbour for a cell, including itself
   """
   def list_of_neighbours([x,y], board_size) do
@@ -44,7 +44,7 @@ defmodule GameOfLife do
     |> remove_out_of_bound_cells!(board_size)
   end
 
-  @doc ~S"""
+  @doc """
   Remove cells that is beyond the current board size
   """
   def remove_out_of_bound_cells!(cells, [cols, rows]) do
@@ -52,7 +52,7 @@ defmodule GameOfLife do
     |> Enum.filter(fn([x,y]) -> x > 0 && y > 0 && x <= cols && y <= rows end )
   end
 
-  @doc ~S"""
+  @doc """
   Apply Game of Life Logic
   """
   def apply_game_logic(affected_cells, state, board_size) do
@@ -60,7 +60,7 @@ defmodule GameOfLife do
     |> Enum.filter(fn (cell) -> is_cell_populated?(cell, state, board_size) end)
   end
 
-  @doc ~S"""
+  @doc """
   Determines if a cell should be populated or not
   - If a cell is currently populated and have 2-3 active neighbours, it stays alive
   - If a cell is not currently populated but have 3 active neighbours, it will be populated
@@ -78,7 +78,7 @@ defmodule GameOfLife do
     end
   end
 
-  @doc ~S"""
+  @doc """
   Calculates the number of active neighbours for a cell
   """
   def number_of_active_neighbours(cell, state, board_size) do
